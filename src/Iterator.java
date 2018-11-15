@@ -9,6 +9,7 @@ public class Iterator implements java.util.Iterator {
     }
 
     private Node front, aux, rear;
+    boolean end= true;
 
     Iterator(ArrayList<Integer> lista) {
         front = null;
@@ -33,7 +34,7 @@ public class Iterator implements java.util.Iterator {
 
     @Override
     public boolean hasNext() {
-        return false;
+        return end;
     }
 
     public int[] next(){
@@ -45,6 +46,7 @@ public class Iterator implements java.util.Iterator {
                     front.info = -1;
                     aux = new Node();
                     aux.info = -1;
+
                 } else {
                     front = front.next;
                     aux = front.next;
@@ -52,6 +54,9 @@ public class Iterator implements java.util.Iterator {
             } else {
                 aux = aux.next;
             }
+        }
+        if(pos[0] == -1){
+            this.end = false;
         }
         return pos;
     }
