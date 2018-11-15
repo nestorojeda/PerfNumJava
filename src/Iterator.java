@@ -9,7 +9,7 @@ public class Iterator implements java.util.Iterator {
     }
 
     private Node front, aux, rear;
-    boolean end= true;
+    private boolean end= true;
 
     Iterator(ArrayList<Integer> lista) {
         front = null;

@@ -7,7 +7,7 @@ class FileHandler {
 
     static ArrayList<Integer> fileToArray(String path) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(path));
-        ArrayList<Integer> res = new ArrayList<Integer>();
+        ArrayList<Integer> res = new ArrayList<>();
 
         String st;
         while ((st = br.readLine()) != null){
