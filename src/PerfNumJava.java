@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class PerfNumJava {
     public static void main(String[] args) throws IOException {
-        System.out.println("IMPORTANTE: EL ARCHIVO DEBE TENER UN SOLO NUMERO ENTERO POR CADA LINEA DEL ARCHIVO");
+        System.out.println("IMPORTANTE: EL ARCHIVO DEBE TENER UN SOLO NUMERO ENTERO POR CADA LINEA");
         System.out.println("Introduce la ruta del archivo: ");
         Scanner myScanner = new Scanner(System.in);
         String path = myScanner.next();
