@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class PerfNumJava {
+public class main {
     public static void main(String[] args) throws IOException {
         System.out.println("IMPORTANTE: EL ARCHIVO DEBE TENER UN SOLO NUMERO ENTERO POR CADA LINEA");
         System.out.println("Introduce la ruta del archivo: ");
