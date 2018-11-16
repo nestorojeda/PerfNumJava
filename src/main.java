@@ -10,19 +10,18 @@ public class main {
         System.out.println("Introduce la ruta del archivo: ");
         Scanner myScanner = new Scanner(System.in);
         String path = myScanner.next();
+        long startTime = System.nanoTime();
         ArrayList<Integer> list = FileHandler.fileToArray(path);
         Iterator iterator = new Iterator(list);
         while (iterator.hasNext()) {
             int[] index = iterator.next();
-            int sum = 0;
-            for (int anIndex : index) {
-                sum += anIndex;
-            }
+            int sum = list.get(index[0]) + list.get(index[1]);
             if(PerfNum.isPerfect(sum)){
                 System.out.println("La combinacion de las posiciones: " + Arrays.toString(index) + " genera el numero perfecto: " + sum);
             }
         }
-        System.out.println("Ejecución terminada");
+        long endTime = System.nanoTime();
+        System.out.println("Ejecución terminada en " +(endTime - startTime) + " ns");
     }
 }
 

@@ -15,7 +15,9 @@ public class Iterator implements java.util.Iterator {
         front = null;
         aux = null;
         rear = null;
-        for (Integer e: lista) insert(e);
+        for (int i = 0 ; i < lista.size(); i++) {
+            insert(i);
+        }
 
 
     }
@@ -46,6 +48,7 @@ public class Iterator implements java.util.Iterator {
                     front.info = -1;
                     aux = new Node();
                     aux.info = -1;
+                    this.end = false;
 
                 } else {
                     front = front.next;
@@ -54,9 +57,6 @@ public class Iterator implements java.util.Iterator {
             } else {
                 aux = aux.next;
             }
-        }
-        if(pos[0] == -1){
-            this.end = false;
         }
         return pos;
     }
