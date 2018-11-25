@@ -3,7 +3,7 @@ package Tools;
 public class Iterator implements java.util.Iterator {
 
     //Global parameters
-    private boolean[] list;
+    private int size;
     private int[] index;
     private boolean hasNext;
 
@@ -13,11 +13,7 @@ public class Iterator implements java.util.Iterator {
      */
     public Iterator(int size, int n) {
         hasNext = true;
-        list = new boolean[size]; //Generamos un array de tipo booleano que representa si se debe tomar un valor o no
-        //Establecemos los primeros n elementos a true y el resto a false
-        for (int i = 0; i < size; i++) list[i] = i < n;
-
-        //Generamos un array que nos indicará las distintas posiciones de list que retornarán como true
+        this.size = size;
         index = new int[n];
         for (int i=0; i<n; i++) index[i] = i;
     }
@@ -30,7 +26,7 @@ public class Iterator implements java.util.Iterator {
      * @return {@code true} if the iteration has more elements
      */
     @Override
-    public boolean hasNext() {
+    public boolean hasNext(){
         return hasNext;
     }
 
@@ -41,23 +37,19 @@ public class Iterator implements java.util.Iterator {
      * @return the next element in the iteration
      */
     @Override
-    public boolean[] next(){
-        boolean[] res = list.clone(); //Se copia el estado actual de la list para enviarlo una vez se modifique
+    public int[] next(){
+        int [] res = index.clone(); //Se copia el estado actual de index para enviarlo una vez se modifique
         //En caso de que el elemento más significativo haya llegado a su última posición, no quedan iteraciones posibles
-        if(index[0]== list.length-index.length){
+        if(index[0]== size-index.length){
             hasNext = false;
         } else {
             for (int i = index.length-1; i >= 0; i--) {
                 //Busca el primer elemento en la posición menos significativa que no ha llegado a su máximo valor,
                 // lo aumenta en una unidad y cambia los elementos del array menos significativos que él
-                if (index[i] < list.length-(index.length-(i))) {
-                    list[index[i]]=false;
+                if (index[i] < size-(index.length-(i))) {
                     index[i]++;
-                    list[index[i]]=true;
                     for (int j = i+1; j < index.length; j++) {
-                        list[index[j]]=false;
                         index[j] = index[j-1] + 1;
-                        list[index[j]]=true;
                     }
                     break;
                 }

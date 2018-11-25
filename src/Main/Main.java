@@ -25,19 +25,13 @@ public class Main {
             Iterator iterator = new Iterator(list.size(), n);
             while (iterator.hasNext()) {
                 int sum = 0;
-                int[] pos = new int[n];
-                int count = 0;
-                boolean[] index = iterator.next();
-                for (int i = 0; i < index.length; i++) {
-                    if (index[i]) {
-                        pos[count] = i;
-                        count++;
-                        sum += list.get(i);
-                    }
+                int[] index = iterator.next();
+                for (int i : index) {
+                    sum += list.get(i);
                 }
 
                 if (PerfNum.isPerfect(sum)) {
-                    System.out.println("La combinacion de las posiciones: " + Arrays.toString(pos) +
+                    System.out.println("La combinacion de las posiciones: " + Arrays.toString(index) +
                             " genera el numero perfecto: " + sum);
                 }
 
