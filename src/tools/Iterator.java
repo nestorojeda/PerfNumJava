@@ -1,4 +1,4 @@
-package Tools;
+package tools;
 
 public class Iterator implements java.util.Iterator {
 

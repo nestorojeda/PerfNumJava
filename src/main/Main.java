@@ -1,11 +1,11 @@
-package Main;
+package main;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import Tools.FileHandler;
-import Tools.Iterator;
-import Tools.PerfNum;
+import tools.FileHandler;
+import tools.Iterator;
+import tools.PerfNum;
 
 
 public class Main {
