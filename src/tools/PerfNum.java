@@ -9,6 +9,10 @@ public class PerfNum {
      * @return {@code true} if {@param n} is a perfect number
      */
     public static boolean isPerfect(int n) {
+        if(n==0){
+            return false;
+        }
+
         int sum = 0;
         for (int i = 1; i < n; i++) {
             if (n % i == 0) {
